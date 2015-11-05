@@ -11,16 +11,16 @@ const MAX_MESSAGE_LENGTH = 140;
  ******************************************************************************/
 
 class MessageComposer extends React.Component {
-  get empty() {
+  get emptyʔ() {
     return this.props.message.trim() === '';
   }
 
-  get tooLong() {
+  get tooLongʔ() {
     return this.messageLength > MAX_MESSAGE_LENGTH;
   }
 
-  get submitDisabled() {
-    return this.empty || this.tooLong;
+  get submitDisabledʔ() {
+    return this.emptyʔ || this.tooLongʔ;
   }
 
   get messageLength() {
@@ -32,9 +32,9 @@ class MessageComposer extends React.Component {
       <form method="POST" action="#" onSubmit={postMessage}>
         <ComposeTextArea
           value={this.props.message}
-          valid={!this.tooLong}
+          valid={!this.tooLongʔ}
           onChange={evt => changeMessage(evt.target.value)} />
-        <SubmitButton disabled={this.submitDisabled}> Post </SubmitButton>
+        <SubmitButton disabled={this.submitDisabledʔ}> Post </SubmitButton>
         <MessageCounter messageLength={this.messageLength} />
       </form>
     );
